@@ -4,7 +4,20 @@
     "password": "abcd@1234",
     "database": "ToDo",
     "host": "localhost",
-    "dialect": "postgres"
+    "port": 5432,
+    "dialect": "postgres",
+    "dialectOptions": {
+      "ssl": false
+    },
+    "define": {
+      "timestamps": false
+    },
+    "freezeTableName": true,
+    "pool": {
+      "max": 9,
+      "min": 0,
+      "idle": 10000
+    }
   },
   "test": {
     "username": "root",
