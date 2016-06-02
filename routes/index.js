@@ -5,20 +5,13 @@ var path = require('path');
 var appRoot = require('app-root-path');
 
 var rootPath = function (req, res, next) {
-  //req.rootPath = '\root';
   req.rootPath = path.dirname(require.main.filename);
   next();
 };
 
 /* GET home page. */
-router.get('/home', function (req, res, next) {
-  res.render('index', { title: 'Express' });
-});
-
-
-/* GET home page. */
 router.get('/', function (req, res) {
-  res.sendFile(path.join(appRoot.path, 'home.html'));
+  res.sendFile(path.join(appRoot.path, 'views', 'home.html'));
 });
 
 // Get all todos
